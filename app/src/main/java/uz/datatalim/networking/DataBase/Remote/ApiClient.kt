@@ -8,12 +8,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ApiClient {
 
     private const val tester=true
-    private const val SERVER_DEV="https://api.thecatapi.com/v1"
-    private const val SERVER_PRODUCTION="https://api.thecatapi.com/v1"
+    private const val SERVER_DEV="https://api.thecatapi.com/v1/"
+    private const val SERVER_PRODUCTION="https://api.thecatapi.com/v1/"
 
     val client=getClient()
 
     private val retrofit=Retrofit.Builder().baseUrl(baseUrl()).addConverterFactory(GsonConverterFactory.create()).client(client).build()
+    val apiServis= retrofit.create(ApiServis::class.java)
 
 
 
