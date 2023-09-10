@@ -32,9 +32,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
 
-        loadBreeds()
-        breeds= ArrayList()
         breedsAdapter= BreedAdapter()
+        breeds= ArrayList()
+        loadBreeds()
         binding.rvCats.adapter=breedsAdapter
         binding.rvCats.layoutManager=LinearLayoutManager(this)
         breedsAdapter.submitList(breeds)
@@ -59,7 +59,6 @@ class MainActivity : AppCompatActivity() {
 
                     breeds.clear()
                     breeds.addAll(breeds)
-                    breedsAdapter.submitList(breeds)
 
 
                 }
